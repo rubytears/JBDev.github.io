@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vue Props</title>
+    </head>
+    <body>
+        <div id="app">
+            <child-component v-on:show-log="printText"></child-component>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+
+        <script>
+            Vue.component('child-component', {
+                template: '<button v-on:click="showLog">show</button>',
+                methods: {
+                    showLog: function() {
+                        this.$emit('show-log');
+                    }
+                }
+            });
+
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: 'Hello Vue! passed from Parent Component'
+                },
+                methods: {
+                    printText: function() {
+                        alert("received an event");
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
+
+<!--
+    이 코드는 child-component의 [show] 버튼을 클릭하여 이벤트를 발생시키고, 발생한 이벤트로 상위 컴포넌트의
+    printText() 메소드를 실행시킨다. [show] 버튼을 클릭하면 아래 과정이 발생한다.
+    1. [show] 버튼을 클릭하면 클릭 이벤트 v-on:click="showLog"에 따라 showLog() 메소드가 실행된다.
+    2. showLog() 메소드 안에 this.$emit('show-log')가 실행되면서 show-log 이벤트가 발생한다.
+    3. show-log 이벤트는 <child-component>에 정의한 v-on:show-log에 전달되고, v-on:show-log의 대상 메소드인 최상위 컴포넌트의 printText()가 실행된다.
+    4. printText()는 received an event라는 alert를 실행한다.
+-->
