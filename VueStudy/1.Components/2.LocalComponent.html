@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vue Component Registration</title>
+    </head>
+    <body>
+        <div id="app">
+            <button>컴포넌트 등록</button>
+            <my-local-component></my-local-component>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+        <script>
+            var cmp = {
+                //컴포넌트 내용
+                template: '<div>지역 컴포넌트가 등록되었습니다!</div>'
+            };
+
+            new Vue({
+                el: '#app',
+                components: {
+                    'my-local-component':cmp
+                }
+            });
+        </script>
+    </body>
+</html>
+
+<!--
+    지역 컴포넌트 등록은 전역 컴포넌트 등록과는 다르게 인스턴스에 components 속성을 추가하고 등록할 컴포넌트 이름과 내용을 정의하면 된다.
+    컴포넌트 이름은 전역 컴포넌트와 마찬가지로 HTML에 등록할 사용자 정의 태그를 의미하고, 
+    컴포넌트 내용은 컴포넌트 태그가 실제 화면 요소로 변환될 때의 내용을 의미한다.
+
+    변수 cmp에는 화면에 나타낼 컴포넌트의 내용을 정의했다. 컴포넌트의 내용에 template, data, methods 등 여러가지 속성이 들어갈 수 있지만
+    여기서는 간단히 컴포넌트를 등록하는 코드만 작동하도록 template 속성만 사용되었다.
+-->

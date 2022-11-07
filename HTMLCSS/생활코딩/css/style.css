@@ -1,0 +1,33 @@
+h1 {
+    font-size: 45px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    padding: 20px;
+    margin: 0;
+}
+#grid {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+ol {
+    border-right: 1px solid gray;
+    width: 100px;
+    margin: 0px;
+    padding: 10px 5px 0px 30px;
+}
+.context {
+    margin: 10px;
+}
+
+a:link {
+    color: rgb(55, 99, 245);
+    text-decoration: none;
+}
+a:visited {
+    color: rgb(154, 15, 247);
+}
+
+body {
+    margin: 0px;
+}
