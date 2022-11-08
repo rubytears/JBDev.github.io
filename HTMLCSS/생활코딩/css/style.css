@@ -28,6 +28,21 @@ a:visited {
     color: rgb(154, 15, 247);
 }
 
+@media(max-width:800px) {
+    h1 {
+        border: none;
+    }
+    #grid {
+        display:block;
+    }
+    ol {
+        border: none;
+    }
+    .context {
+        margin: 20px;
+    }
+}
+
 body {
     margin: 0px;
 }
