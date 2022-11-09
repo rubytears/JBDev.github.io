@@ -1,0 +1,19 @@
+.selector table {
+    border: 2px solid rgb(0, 0, 0);
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.selector table tr th {
+    padding: 8px;
+    text-align: center;
+}
+
+.selector table tr td {
+    padding: 8px 8px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: top;
+}
