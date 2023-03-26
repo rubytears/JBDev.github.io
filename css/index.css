@@ -1,3 +1,32 @@
-p {
-    color: red;
+body {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    align-self: center;
+    margin: 30px 10px 0px 10px;
+}
+div {
+    flex:1 0 900px;
+}
+.menu {
+    display: flex;
+    list-style: none;
+    flex: 1 1 80%;
+    gap: 3em;
+    justify-content: center;
+}
+.line {
+    align-self: center;
+    width: 80%;
+    border-top:1px solid grey;
+    margin: -10px 10% 10px 10%;
+}
+.menu a{
+    text-decoration: none;
+}
+footer {
+    display:flex;
+    justify-content: space-between;
+    margin: 10px 10px;
 }
