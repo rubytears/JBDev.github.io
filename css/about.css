@@ -9,6 +9,27 @@ h1 {
 div {
     flex:1 0 900px;
 }
+
+.contents {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    height: 500px;
+    border:1px solid red;
+}
+.contents img {
+    height: 300px;
+    border:1px solid red;
+}
+.contents p {
+    flex:0 1 30em;
+    width: 40%;
+    height: 70%;
+    overflow-y: scroll;
+    border:1px solid red;
+}
+
 .menu {
     display: flex;
     list-style: none;
