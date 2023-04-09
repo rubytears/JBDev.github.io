@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>Rock, Scissors, Paper</title>
+  </header>
+  <body>
+    <h1>Rock, Scissors, Paper</h1>
+    <div class="score"></div><br>
+    <div class="selection">
+      <button id="rock">Rock</button>
+      <button id="scissors">Scissors</button>
+      <button id="paper">Paper</button>
+    </div>
+    <button class="replay hidden">Play again?</button>
+
+
+<!-- score display 만들고 5점 달성하면 버튼 숨기고
+  리플레이시 다시 디스플레이
+
+-->
+
+    <p></p>
+  </body>
+  <script>
+    function computerDecision() {
+      let decision = Math.floor(Math.random() * 3);
+      if(decision === 0) return "rock";
+      return decision === 1 ? "scissors" : "paper";
+    }
+
+    function playRound(userSelection, computerSelection) {
+      if(userSelection === computerSelection) {
+        return `Draw! You and computer both chose ${userSelection}`;
+      }
+      if((userSelection === "rock" && computerSelection === "scissors")
+      || (userSelection === "scissors" && computerSelection === "paper")
+      || (userSelection === "paper" && computerSelection === "rock")) {
+        yourScore++;
+        score.textContent = `You ${yourScore} : ${computerScore} Computer`;
+        if(yourScore >= 5){
+          restart.classList.remove("hidden");
+          selection.classList.add("hidden");
+          return "You are the final winner! Congratulation!";
+        }
+        return `You Win! ${userSelection} beats ${computerSelection}.`;
+      } else {
+        computerScore++;
+        score.textContent = `You ${yourScore} : ${computerScore} Computer`;
+        if(computerScore >= 5){
+          restart,classList.remove("hidden");
+          selection.classList.add("hidden");
+          return "Computer is the final winner! Try again!";
+        }
+        return `You Lose! ${computerSelection} beats ${userSelection}.`;
+      }
+    }
+
+    function replay(){
+      selection.classList.remove("hidden");
+      restart.classList.add("hidden");
+      yourScore = 0;
+      computerScore = 0;
+      score.textContent = `You ${yourScore} : ${computerScore} Computer`;
+    }
+
+    let yourScore = 0;
+    let computerScore = 0;
+    const p = document.querySelector("p");
+    const score = document.querySelector(".score");
+    const rock = document.querySelector("#rock");
+    const scissors = document.querySelector("#scissors");
+    const paper = document.querySelector("#paper");
+    const selection = document.querySelector(".selection");
+    const restart = document.querySelector(".replay");
+
+    score.textContent = `You ${yourScore} : ${computerScore} Computer`;
+    rock.addEventListener('click', () => {
+      p.textContent = playRound('rock',computerDecision());
+    });
+    scissors.addEventListener('click', () => {
+      p.textContent = playRound('scissors',computerDecision());
+    });
+    paper.addEventListener('click', () => {
+      p.textContent = playRound('paper',computerDecision());
+    });
+
+    restart.addEventListener('click', () => {
+      p.textContent = "";
+      replay();
+    });
+  </script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .score {
+      font-size: 20px;
+      font-weight: 500;
+      color: darkblue;
+    }
+    .hidden {
+      display:none;
+    }
+  </style>
+</html>
