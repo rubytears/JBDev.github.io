@@ -1,21 +1,35 @@
 body {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    margin: 0px;
+    background-color: rgb(201 224 255 / 13%);
+
 }
-h1 {
-    align-self: center;
-    margin: 30px 10px 0px 10px;
+
+#jbb {
+    display: flex;
+    justify-content: center;
 }
-div {
+
+#jbb>img {
+    width: 20rem;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+body div {
     flex:1 0 900px;
 }
+
 .menu {
     display: flex;
     list-style: none;
     flex: 1 1 80%;
-    gap: 3em;
+    gap: 3rem;
     justify-content: center;
 }
+
 .line {
     align-self: center;
     width: 80%;
@@ -27,6 +41,7 @@ div {
 }
 footer {
     display:flex;
+    margin: 0px 5px;
+    background-color: rgba(161, 161, 161, 0.357);
     justify-content: space-between;
-    margin: 10px 10px;
 }
