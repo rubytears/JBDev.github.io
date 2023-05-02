@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Etch-A-Sketch</title>
+  </head>
+  <body>
+    <button class="grid">Grid Generator</button>
+    <div class="container">
+    </div>
+  </body>
+
+  <script>
+
+  function colorize(e) {
+    let bgColor = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
+    e.target.style.background = bgColor;
+  }
+
+  function createGrid(n) {
+    if(n > 100 || !n) {
+      alert("Wrong input. The maximum grid size is 100");
+      return;
+    }
+    if(rows.length > 0) {
+      container.remove();
+      container = document.createElement("div");
+      container.setAttribute("class", "container");
+      document.body.appendChild(container);
+    }
+
+    for (let i = 0; i < n; i++) {
+      let newDiv = document.createElement("div");
+      newDiv.setAttribute("class", `row ${i}`)
+      container.appendChild(newDiv);
+      for (let j = 0; j < n; j++) {
+        let childDiv = document.createElement("div");
+        newDiv.appendChild(childDiv);
+      }
+    }
+  }
+    
+  let container = document.querySelector('.container');
+  const gridButton = document.querySelector('.grid');
+  let rows = document.querySelectorAll('.row');
+
+  gridButton.addEventListener('click', () => {
+    createGrid(parseInt(prompt("How many grid do you want to make?")));
+    rows = document.querySelectorAll('.row');
+    rows.forEach(row => {
+      row.addEventListener('mouseover', e => colorize(e));
+      row.addEventListener('mouseout', e => {
+      setTimeout(() => {
+          e.target.style.background = 'white';
+        }, 2000);
+      });
+    });
+  });
+
+  </script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+    }
+    .grid {
+      margin-top: 30px;
+      width: 200px;
+      padding: 0.6em 2em;
+      border: none;
+      outline: none;
+      color: rgb(255, 255, 255);
+      background: #111;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 10px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    .grid:before {
+      content: "";
+      background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+      );
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing-grid 20s linear infinite;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+
+    @keyframes glowing-grid {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .grid:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #222;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .row {
+      display: flex;
+    }
+    .row div {
+      width: 30px;
+      height: 30px;
+      border: 1px solid rgba(176, 176, 176, 0.377);
+    }
+  </style>
+</html>

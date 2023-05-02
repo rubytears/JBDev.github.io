@@ -1,0 +1,46 @@
+body {
+  background-color: white;
+}
+
+.canvas {
+  border: 1px solid blue;
+}
+
+.row {
+  border: 1px solid red;
+  display:flex;
+}
+
+.numbers {
+  height: 100px;
+  border: 1px solid orange;
+  display: flex;
+}
+.vn {
+  display: flex;
+  width: 20px;
+  border: 1px solid black;
+  text-align: center;
+  align-items: flex-end;
+  user-select: none;
+}
+.thick-right-border {
+  border-right: 0.2em solid black;
+}
+
+.box {
+  border: 1px solid rgb(179, 179, 179);
+  width: 20px;
+  height: 20px;
+  font-size: auto;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+.checked {
+  background-color: black;
+}
+.crossed {
+  background: url(../img/Nemo-crossed.png);
+  background-size: contain;
+}
