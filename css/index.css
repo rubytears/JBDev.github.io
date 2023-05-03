@@ -4,19 +4,76 @@ body {
     justify-content: space-between;
     margin: 0px;
     background-color: rgb(201 224 255 / 13%);
+    border:1px solid rgb(7, 255, 243);
 
 }
 
 #jbb {
-    display: flex;
-    justify-content: center;
+    align-self: center;
+    width: 20rem;
 }
 
-#jbb>img {
+#jbb > img {
+    cursor: pointer;
     width: 20rem;
     margin-top: 10px;
     margin-bottom: 0px;
 }
+.content {
+    margin: 10px;
+    border:1px solid rgb(0, 0, 0);
+}
+
+#about {
+    height: 100%;
+    border:1px solid red;
+    background-image: url(../img/test.jpg);
+}
+#person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid rgb(161, 221, 101);
+    height: 100%;
+}
+#person .profile {
+    flex: 0 1 auto;
+    align-self: center;
+    width: 6rem;
+    height: 10rem;
+    border:1px solid rgb(57, 73, 219);
+}
+.arrow {
+    flex:0 0 auto;
+    margin-left: 1rem;
+    align-self: center;
+    width: 0;
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent; 
+    border-right:10px solid #c2e1f5; 
+}
+
+.dialog {
+    flex:0 1 auto;
+    align-self: center;
+	background: #c2e1f5;
+	border: 4px solid #c2e1f5;
+    border-radius: 5px;
+    padding: 8px 1rem 8px 8px;
+    width: 18rem;
+    height: 20rem;
+    overflow-y: scroll;
+}
+
+
+#interests {
+
+}
+#contact {
+
+}
+
 
 body div {
     flex:1 0 900px;
@@ -32,16 +89,21 @@ body div {
 
 .line {
     align-self: center;
-    width: 80%;
-    border-top:1px solid grey;
+    width: 50rem;
+    border-top: 2px solid rgb(130, 171, 132);
     margin: -10px 10% 10px 10%;
 }
-.menu a{
-    text-decoration: none;
+.menu li {
+    cursor: pointer;
+    margin-bottom: 10px;
 }
+.menu li:hover {
+    font-weight: bold;
+    color: blueviolet;
+}
+
 footer {
-    display:flex;
-    margin: 0px 5px;
-    background-color: rgba(161, 161, 161, 0.357);
-    justify-content: space-between;
+    margin-bottom: 0px;
+    background-color: rgba(251, 255, 209, 0.276);
+    text-align: center;
 }
