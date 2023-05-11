@@ -1,29 +1,13 @@
 // Functions for Navigation
-function revealHome() {
+function reveal(name) {
+  if(previousMenu){
+    previousMenu.classList.remove("active");
+  }
   previousElement.style.display = "none";
-  previousElement = document.querySelector("#home");
-  previousElement.style.display = "block";
-}
-function revealAbout() {
-  previousElement.style.display = "none";
-  previousElement = document.querySelector("#about");
-  previousElement.style.display = "block";
-}
-
-function revealCreations() {
-  previousElement.style.display = "none";
-  previousElement = document.querySelector("#creations");
-  previousElement.style.display = "block";
-}
-function revealInterests() {
-  previousElement.style.display = "none";
-  previousElement = document.querySelector("#interests");
-  previousElement.style.display = "block";
-}
-function revealContact() {
-  previousElement.style.display = "none";
-  previousElement = document.querySelector("#contact");
-  previousElement.style.display = "block";
+  previousElement = document.querySelector(`#${name}`);
+  previousElement.style.display = "flex";
+  previousMenu = document.querySelector(`a[name=${name}]`);
+  previousMenu.classList.add("active");
 }
 
 // Functions for About page
@@ -38,9 +22,10 @@ function silent() {
 profile.src = baseURL + "img/Silent.png";
 }
 
-let previousElement = document.querySelector("#home");
-const baseURL = "https://rubytears.github.io/";
 
+const baseURL = "https://rubytears.github.io/";
+let previousElement = document.querySelector("#home");
+let previousMenu;
 const profile = document.querySelector('.profile');
 const dialog = document.querySelector('.dialog');
 
