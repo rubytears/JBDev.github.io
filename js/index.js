@@ -1,33 +1,13 @@
 // Functions for Navigation
-function reveal(name) {
-  if(previousMenu){
-    previousMenu.classList.remove("active");
-  }
-  previousElement.style.display = "none";
-  previousElement = document.querySelector(`#${name}`);
-  previousElement.style.display = "flex";
-  previousMenu = document.querySelector(`a[name=${name}]`);
-  previousMenu.classList.add("active");
-}
-
-// Functions for About page
-function talk() {
-  profile.src = baseURL + "img/Talk2.png";
-  setTimeout(silent, 100);
-}
-function surprise() {
-profile.src = baseURL + "img/Surprise.png";
-}
-function silent() {
-profile.src = baseURL + "img/Silent.png";
+function revealMenu(name) {
+  const currentMenu = document.querySelector(`#${name}`);
+  previousMenu.classList.add("hidden");
+  document.title = `JBBae : ${name.charAt(0).toUpperCase() + name.slice(1)}`; // First letter upper-cased title
+  currentMenu.classList.remove("hidden");
+  previousMenu = document.querySelector(`#${name}`);
 }
 
 
 const baseURL = "https://rubytears.github.io/";
-let previousElement = document.querySelector("#home");
-let previousMenu;
-const profile = document.querySelector('.profile');
-const dialog = document.querySelector('.dialog');
+let previousMenu = document.querySelector("#home");
 
-profile.addEventListener('mouseover', surprise);
-profile.addEventListener('mouseout', silent);
