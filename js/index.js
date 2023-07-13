@@ -7,7 +7,16 @@ function revealMenu(name) {
   previousMenu = document.querySelector(`#${name}`);
 }
 
+function galleryHover(picture) {
+  const text = picture.nextElementSibling;
+  text.classList.remove("hidden");
+  // text.setAttribute("class", "text");
+}
 
 const baseURL = "https://rubytears.github.io/";
 let previousMenu = document.querySelector("#home");
-
+let cursor = document.getElementById("cursor");
+document.addEventListener("mousemove", (e) => {
+  cursor.style.top = e.pageY + "px";
+  cursor.style.left = e.pageX + "px";
+});

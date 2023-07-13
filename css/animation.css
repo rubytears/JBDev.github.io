@@ -1,0 +1,352 @@
+:root {
+  --title-width: 500px;
+  --title-height: 90px;
+}
+.name {
+  display: flex;
+  gap: 10px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  width: var(--title-width);
+  height: var(--title-height);
+}
+.name > div {
+  position: relative;
+}
+.name > div > div {
+  position: absolute;
+}
+
+/* Upper or Lower */
+.uppercase {
+  width: 60px;
+  height: 90px;
+}
+.lowercase {
+  top: 40px;
+  width: 40px;
+  height: 50px;
+}
+
+/* Thickness and FullLines*/
+.fullHLine {
+  width: inherit;
+}
+.fullVline {
+  height: inherit;
+}
+.thick-h {
+  height: 10px;
+}
+.thick-v {
+  width: 10px;
+}
+.thin-h {
+  height: 5px;
+}
+.thin-v {
+  width: 5px;
+}
+
+.j {
+  width: 40px;
+}
+.j > .first {
+  animation: jFirst 500ms ease-in forwards;
+}
+.j > .second {
+  left: 30px;
+  animation: fullV 500ms ease-in forwards;
+}
+.j > .third {
+  right: 0;
+  bottom: 0;
+  animation: fullH 500ms ease-in forwards;
+}
+.j > .fourth {
+  bottom: 0;
+  animation: jFourth 500ms ease-in forwards;
+}
+
+.o > .first {
+  animation: fullH 500ms ease-in forwards;
+}
+.o > .second {
+  top: 0;
+  right: 0;
+  animation: fullV 500ms ease-in forwards;
+}
+.o > .third {
+  bottom: 0;
+  right: 0;
+  animation: fullH 500ms ease-in forwards;
+}
+.o > .fourth {
+  bottom: 0;
+  animation: fullV 500ms ease-in forwards;
+}
+
+.n > .first {
+  animation: fullV 500ms ease-in -100ms forwards;
+}
+.n > .diagN {
+  width: inherit;
+  height: inherit;
+  animation: nDiag 500ms ease-in forwards;
+}
+.n > .third {
+  right: 0;
+  bottom: 0;
+  animation: fullV 500ms ease-in forwards;
+}
+.g > .first {
+  right: 0;
+  animation: fullH 500ms ease-in forwards;
+}
+.g > .second {
+  animation: fullV 500ms ease-in forwards;
+}
+.g > .third {
+  left: 0;
+  bottom: 0;
+  animation: fullH 500ms ease-in forwards;
+}
+.g > .fourth {
+  right: 0;
+  bottom: 0;
+  animation: gFourth 500ms ease-in forwards;
+}
+.g > .fifth {
+  right: 0;
+  bottom: 20px;
+  animation: gFifth 500ms ease-in forwards;
+}
+.b > .first {
+  bottom: 50px;
+  right: 10px;
+  animation: bFirst 500ms ease-in forwards;
+}
+.b > .second {
+  right: 10px;
+  animation: bSecond 500ms ease-in forwards;
+}
+.b > .third {
+  animation: fullV 500ms ease-in forwards;
+}
+.b > .fourth {
+  bottom: 0;
+  animation: fullH 500ms ease-in forwards;
+}
+.b > .fifth {
+  bottom: 0;
+  right: 0;
+  animation: bFifth 500ms ease-in forwards;
+}
+.b > .sixth {
+  right: 0;
+  bottom: 45px;
+  animation: bSixth 500ms ease-in forwards;
+}
+.i {
+  width: 10px;
+}
+.i > .first {
+  animation: fullV 500ms ease-in forwards;
+}
+
+.a > .diagALeft {
+  width: inherit;
+  height: inherit;
+  animation: aDiagLeft 500ms ease-in forwards;
+}
+.a > .second {
+  top: 20px;
+  left: 10px;
+  animation: aSecond 500ms ease-in forwards;
+}
+
+.a > .diagARight {
+  width: inherit;
+  height: inherit;
+  animation: aDiagRight 500ms ease-in forwards;
+}
+.e > .first {
+  animation: fullH 500ms ease-in forwards;
+}
+.e > .second {
+  animation: fullV 500ms ease-in forwards;
+}
+.e > .third {
+  top: 25px;
+  animation: fullH 500ms ease-in forwards;
+}
+.e > .fourth {
+  bottom: 0;
+  animation: fullH 500ms ease-in forwards;
+}
+
+@keyframes aDiagLeft {
+  from {
+    background-color: black;
+    clip-path: polygon(37.5% 0%, 67.5% 0%, 67.5% 0%, 37.5% 0%);
+  }
+  to {
+    background-color: black;
+    clip-path: polygon(37.5% 0%, 67.5% 0%, 25% 100%, 0% 100%);
+  }
+}
+@keyframes aSecond {
+  from {
+    background-color: black;
+    width: 0;
+  }
+  to {
+    background-color: black;
+    width: 24px;
+  }
+}
+@keyframes aDiagRight {
+  from {
+    background-color: black;
+    clip-path: polygon(60% 0%, 75% 0%, 75% 0%, 60% 0%);
+  }
+  to {
+    background-color: black;
+    clip-path: polygon(60% 0%, 75% 0%, 100% 100%, 87.5% 100%);
+  }
+}
+
+/* Animations */
+@keyframes jFirst {
+  from {
+    background-color: black;
+    width: 0px;
+  }
+  to {
+    background-color: black;
+    width: 90px;
+  }
+}
+@keyframes jFourth {
+  from {
+    background-color: black;
+    height: 0px;
+  }
+  to {
+    background-color: black;
+    height: 30px;
+  }
+}
+
+@keyframes nDiag {
+  from {
+    background-color: black;
+    clip-path: polygon(25% 0, 25% 0%, 20% 20%, 20% 20%);
+  }
+  to {
+    background-color: black;
+    clip-path: polygon(25% 0, 90% 75%, 90% 100%, 20% 20%);
+  }
+}
+/*
+@keyframes nDiag {
+  from {
+    top: 1px;
+    left: 7px;
+    height: 3px;
+    rotate: 150deg;
+    border-right: 5px solid black;
+  }
+  to {
+    top: -3px;
+    left: 20px;
+    height: 55px;
+    rotate: 150deg;
+    border-right: 5px solid black;
+  }
+}
+*/
+
+@keyframes gFourth {
+  from {
+    background-color: black;
+    height: 0;
+  }
+  to {
+    background-color: black;
+    height: 20px;
+  }
+}
+@keyframes gFifth {
+  from {
+    background-color: black;
+    width: 0;
+  }
+  to {
+    background-color: black;
+    width: 20px;
+  }
+}
+
+@keyframes bFirst {
+  from {
+    background-color: black;
+    height: 0;
+  }
+  to {
+    background-color: black;
+    height: 40px;
+  }
+}
+@keyframes bSecond {
+  from {
+    background-color: black;
+    width: 0;
+  }
+  to {
+    background-color: black;
+    width: 50px;
+  }
+}
+@keyframes bFifth {
+  from {
+    background-color: black;
+    height: 0;
+  }
+  to {
+    background-color: black;
+    height: 50px;
+  }
+}
+@keyframes bSixth {
+  from {
+    background-color: black;
+    width: 0;
+  }
+  to {
+    background-color: black;
+    width: 30px;
+  }
+}
+
+/* Common Animations */
+@keyframes fullH {
+  from {
+    background-color: black;
+    width: 0px;
+  }
+  to {
+    background-color: black;
+    width: inherit;
+  }
+}
+@keyframes fullV {
+  from {
+    background-color: black;
+    height: 0px;
+  }
+  to {
+    background-color: black;
+    height: inherit;
+  }
+}

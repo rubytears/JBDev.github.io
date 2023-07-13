@@ -1,0 +1,13 @@
+.hidden {
+  display: none;
+}
+
+table{
+  border-collapse: collapse;
+  width: 30rem;
+  height: 30rem;
+}
+
+tr, td {
+  border: 1px solid #FBDCE4;
+}

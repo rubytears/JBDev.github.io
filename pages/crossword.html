@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/rubytears.github.io/css/crossword.css">
+  <script src="/rubytears.github.io/js/crossword.js" defer></script>
+  <title>가로세로퀴즈</title>
+</head>
+<body>
+  <div id="beginning">
+    <span>어떤 문제를 풀어볼까?</span>
+    <br>
+    <select id="selection">
+      <optgroup label="가로세로낱말퍼즐">
+        <option value="quiz23">문제23</option>
+        <option value="quiz24">문제24</option>
+        <option value="quiz25">문제25</option>
+        <option value="quiz26">문제26</option>
+        <option value="quiz27">문제27</option>
+        <option value="quiz28">문제28</option>
+        <option value="quiz29">문제29</option>
+        <option value="quiz30">문제30</option>
+        <option value="quiz31">문제31</option>
+        <option value="quiz32">문제32</option>
+        <option value="quiz33">문제33</option>
+        <option value="quiz34">문제34</option>
+        <option value="quiz35">문제35</option>
+        <option value="quiz36">문제36</option>
+        <option value="quiz37">문제37</option>
+        <option value="quiz38">문제38</option>
+        <option value="quiz39">문제39</option>
+        <option value="quiz40">문제40</option>
+        <option value="quiz41">문제41</option>
+        <option value="quiz42">문제42</option>
+        <option value="quiz43">문제43</option>
+        <option value="quiz44">문제44</option>
+        <option value="quiz45">문제45</option>
+        <option value="quiz46">문제46</option>
+        <option value="quiz47">문제47</option>
+        <option value="quiz48">문제48</option>
+        <option value="quiz49">문제49</option>
+        <option value="quiz50">문제50</option>
+      </optgroup>
+      <optgroup label="낱말퍼즐추리">
+        <option value="guess1">추리1</option>
+        <option value="guess2">추리2</option>
+        <option value="guess3">추리3</option>
+        <option value="guess4">추리4</option>
+        <option value="guess5">추리5</option>
+        <option value="guess6">추리6</option>
+        <option value="guess7">추리7</option>
+        <option value="guess8">추리8</option>
+        <option value="guess9">추리9</option>
+        <option value="guess10">추리10</option>
+        <option value="guess11">추리11</option>
+        <option value="guess12">추리12</option>
+        <option value="guess13">추리13</option>
+        <option value="guess14">추리14</option>
+        <option value="guess15">추리15</option>
+        <option value="guess16">추리16</option>
+        <option value="guess17">추리17</option>
+        <option value="guess18">추리18</option>
+        <option value="guess19">추리19</option>
+        <option value="guess20">추리20</option>
+        <option value="guess21">추리21</option>
+        <option value="guess22">추리22</option>
+        <option value="guess23">추리23</option>
+        <option value="guess24">추리24</option>
+        <option value="guess25">추리25</option>
+        <option value="guess26">추리26</option>
+        <option value="guess27">추리27</option>
+        <option value="guess28">추리28</option>
+        <option value="guess29">추리29</option>
+        <option value="guess30">추리30</option>
+        <option value="guess31">추리31</option>
+        <option value="guess32">추리32</option>
+        <option value="guess33">추리33</option>
+        <option value="guess34">추리34</option>
+        <option value="guess35">추리35</option>
+        <option value="guess36">추리36</option>
+        <option value="guess37">추리37</option>
+        <option value="guess38">추리38</option>
+        <option value="guess39">추리39</option>
+        <option value="guess40">추리40</option>
+        <option value="guess41">추리41</option>
+        <option value="guess42">추리42</option>
+        <option value="guess43">추리43</option>
+        <option value="guess44">추리44</option>
+        <option value="guess45">추리45</option>
+        <option value="guess46">추리46</option>
+        <option value="guess47">추리47</option>
+        <option value="guess48">추리48</option>
+        <option value="guess49">추리49</option>
+        <option value="guess50">추리50</option>
+      </optgroup>
+    </select>
+    <button type="button" onclick="startQuiz()">가로세로를 풀어보자!</button>
+  </div>
+  <div id="quiz" class="hidden">
+    <p id="number"></p>
+    <table id="table">
+
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
+</head>
+
+<body>
+  <div class="designs">
+    <div class="frames">
+      <span>What?</span>
+      <a href="#">What?</a>
+      <span>What?</span>
+      <span>What?</span>
+      <span>What?</span>
+    </div>
+    <img class="frames" src="./img/1.jpg">
+    <img class="frames" src="./img/2.jpg">
+    <img class="frames" src="./img/3.jpg">
+    <img class="frames" src="./img/4.jpg">
+    <img class="frames" src="./img/5.jpg">
+    <img class="frames" src="./img/6.jpg">
+  </div>
+
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+
+    .designs {
+      background-color: azure;
+      display: grid;
+      gap: 2px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        "one two four"
+        "one three five"
+        "six six six"
+      ;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .frames:nth-child(1) {
+      grid-area: one;
+      border: 3px solid red !important;
+    }
+
+    .frames:nth-child(2) {
+      grid-area: two;
+    }
+
+    .frames:nth-child(3) {
+      grid-area: three;
+    }
+
+    .frames:nth-child(4) {
+      grid-area: four;
+    }
+
+    .frames:nth-child(5) {
+      grid-area: five;
+    }
+
+    .frames:nth-child(6) {
+      grid-area: six;
+    }
+  </style>
+</body>
+
+</html>
